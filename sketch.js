@@ -194,7 +194,7 @@ function keyPressed() {
 }
 
 function keyReleased() {
-    player.changeAnimation("walk");
+   // player.changeAnimation("walk");
     player.velocity.x = 0;
 }
 
