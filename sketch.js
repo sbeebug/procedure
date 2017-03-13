@@ -159,7 +159,7 @@ function draw() {
         text("❤", 20, 20);
     }
     //dead
-    if (lives = 0) {
+    if (lives == 0) {
         ghost1.changeAnimation("move");
         ghost1.velocity.x = 0;
         ghost2.changeAnimation("move");
