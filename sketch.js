@@ -34,7 +34,7 @@ function preload() {
     ghost2_spritesheet = loadSpriteSheet("assets/ghost-1.png", 64, 64, 1);
     ghost2_move = loadAnimation(ghost2_spritesheet);
     //load seeds
-    seed_spritesheet = loadSpriteSheet("assets/sprites/seed.png", 32, 32, 1);
+    seed_spritesheet = loadSpriteSheet("assets/seed.png", 32, 32, 1);
     seed_still = loadAnimation(seed_spritesheet);
     seed_still.frameDelay = 20;
 }
