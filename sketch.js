@@ -21,27 +21,27 @@ var lives;
 
 function preload() {
     //load ground
-    ground_spritesheet = loadSpriteSheet("Project1/ground-1.png", 1100, 64, 1);
+    ground_spritesheet = loadSpriteSheet("assets/ground-1.png", 1100, 64, 1);
     ground_still = loadAnimation(ground_spritesheet);
     //load player
-    player_spritesheet = loadSpriteSheet("Project1/sprites/persephone/persephonesheet/persephoneright.png", 64, 64, 2);
+    player_spritesheet = loadSpriteSheet("assets/persephoneright.png", 64, 64, 2);
     player_walk = loadAnimation(player_spritesheet);
     player_walk.frameDelay = 25;
     //load ghost1
-    ghost1_spritesheet = loadSpriteSheet("Project1/ghost-1.png", 64, 64, 1);
+    ghost1_spritesheet = loadSpriteSheet("assets/ghost-1.png", 64, 64, 1);
     ghost1_move = loadAnimation(ghost1_spritesheet);
     //load ghost2
-    ghost2_spritesheet = loadSpriteSheet("Project1/ghost-1.png", 64, 64, 1);
+    ghost2_spritesheet = loadSpriteSheet("assets/ghost-1.png", 64, 64, 1);
     ghost2_move = loadAnimation(ghost2_spritesheet);
     //load seeds
-    seed_spritesheet = loadSpriteSheet("Project1/sprites/seed.png", 32, 32, 1);
+    seed_spritesheet = loadSpriteSheet("assets/sprites/seed.png", 32, 32, 1);
     seed_still = loadAnimation(seed_spritesheet);
     seed_still.frameDelay = 20;
 }
 
 function setup() {
     //background
-    bg = loadImage("Project1/background-1.png");
+    bg = loadImage("assets/background-1.png");
     createCanvas(1100, 220);
     //ground 
     ground = createSprite(width / 2, height, 1100, 64);
