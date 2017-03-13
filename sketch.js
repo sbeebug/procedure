@@ -136,27 +136,27 @@ function draw() {
     if (lives == 5) {
         noStroke();
         color(255);
-        text("❤ ❤ ❤ ❤ ❤", 120, 20);
+        text("❤ ❤ ❤ ❤ ❤", 20, 20);
     }
     if (lives == 4) {
         noStroke();
         color(255);
-        text("❤ ❤ ❤ ❤", 120, 20);
+        text("❤ ❤ ❤ ❤", 20, 20);
     }
     if (lives == 3) {
         noStroke();
         color(255);
-        text("❤ ❤ ❤", 120, 20);
+        text("❤ ❤ ❤", 20, 20);
     }
     if (lives == 2) {
         noStroke();
         color(255);
-        text("❤ ❤", 120, 20);
+        text("❤ ❤", 20, 20);
     }
     if (lives == 1) {
         noStroke();
         color(255);
-        text("❤", 120, 20);
+        text("❤", 20, 20);
     }
     //dead
     if (lives = 0) {
