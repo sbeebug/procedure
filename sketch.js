@@ -124,12 +124,22 @@ function draw() {
         text("YOU WIN!", width / 2, height / 2);
     }
     //lives amount
-    if (ghost1.overlap(player)) {
-        lives = lives - 1;
-    }
-    if (ghost2.overlap(player)) {
-        lives = lives - 1;
-    }
+     if (ghost1.overlap(player)) {
+         lives = lives - 1;
+     }
+     if (ghost2.overlap(player)) {
+         lives = lives - 1;
+         }
+    //for (var i = 0; i < ghost1; i = i + 1) {
+    //    if (player.overlap(ghost1[i])) {
+    //        lives = lives - 1;
+    //    }
+    //}
+    //for (var i = 0; i < ghost2; i = i + 1) {
+    //    if (player.overlap(ghost2[i])) {
+     //       lives = lives - 1;
+     //   }
+    //}
     textAlign(LEFT, TOP);
     textSize(15);
     //lives
@@ -138,39 +148,40 @@ function draw() {
         color(255);
         text("❤ ❤ ❤ ❤ ❤", 20, 20);
     }
-    if (lives == 4) {
+    else if (lives == 4) {
         noStroke();
         color(255);
         text("❤ ❤ ❤ ❤", 20, 20);
     }
-    if (lives == 3) {
+    else if (lives == 3) {
         noStroke();
         color(255);
         text("❤ ❤ ❤", 20, 20);
     }
-    if (lives == 2) {
+    else if (lives == 2) {
         noStroke();
         color(255);
         text("❤ ❤", 20, 20);
     }
-    if (lives == 1) {
+    else if (lives == 1) {
         noStroke();
         color(255);
         text("❤", 20, 20);
     }
     //dead
-    if (lives == 0) {
+    else if (lives < 0) {
         ghost1.changeAnimation("move");
         ghost1.velocity.x = 0;
         ghost2.changeAnimation("move");
         ghost2.velocity.x = 0;
+        player.velocity.x = 0;
+        player.velocity.y = 0;
         stroke(0);
         fill(255);
         background(0, 0, 0, 100);
         text("GAME OVER", width / 2, height / 2);
     }
 }
-
 function keyPressed() {
     //move left
     if (keyCode == LEFT_ARROW) {
