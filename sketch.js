@@ -41,7 +41,7 @@ function preload() {
 
 function setup() {
     //background
-    bg = loadImage("Project1/background-1.png");
+    bg = loadImage("assets/background-1.png");
     createCanvas(1100, 220);
     //ground 
     ground = createSprite(width / 2, height, 1100, 64);
