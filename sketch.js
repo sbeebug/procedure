@@ -41,7 +41,7 @@ function preload() {
 
 function setup() {
     //background
-    bg = loadImage("assets/background-1.png");
+    bg = loadImage("Project1/background-1.png");
     createCanvas(1100, 220);
     //ground 
     ground = createSprite(width / 2, height, 1100, 64);
@@ -49,12 +49,15 @@ function setup() {
     //player
     player = createSprite(width / 2, height - 64, 64, 64);
     player.addAnimation("walk", player_walk);
+    player.setCollider("rectangle",0,0,30,60);
     //ghost1
     ghost1 = createSprite(random(0, width), height - 64);
     ghost1.addAnimation("move", ghost1_move);
+    ghost1.setCollider("rectangle",0,0,40,60);
     //ghost2
     ghost2 = createSprite(random(0, width), height - 64);
     ghost2.addAnimation("move", ghost2_move);
+    ghost2.setCollider("rectangle",0,0,40,60);
     //seeds
     coins = new Group();
     for (var i = 0; i < 15; i++) {
@@ -62,6 +65,7 @@ function setup() {
         seed.addAnimation("still", seed_still);
         coins.add(seed);
     }
+    seed.setCollider("rectangle",0,0,15,30);
     score = 0;
     lives = 5;
 }
@@ -119,27 +123,23 @@ function draw() {
         ghost1.changeAnimation("move");
         ghost1.velocity.x = 0;
         ghost2.changeAnimation("move");
-        ghost2.velocity.x = 0;
+        ghost2.velocity.x = 0
+        player.velocity.x = 0;
+        player.velocity.y = 0;
         background(0, 0, 0, 100);
-        text("YOU WIN!", width / 2, height / 2);
+        text("YOU WIN! You may leave the Underworld.", 655, height / 2);
     }
     //lives amount
      if (ghost1.overlap(player)) {
+         player.position.x = ghost1.position.x - 200;
+         player.position.y = height-64;
          lives = lives - 1;
      }
      if (ghost2.overlap(player)) {
+         player.position.x = ghost2.position.x - 200;
+         player.position.y = height - 64;
          lives = lives - 1;
          }
-    //for (var i = 0; i < ghost1; i = i + 1) {
-    //    if (player.overlap(ghost1[i])) {
-    //        lives = lives - 1;
-    //    }
-    //}
-    //for (var i = 0; i < ghost2; i = i + 1) {
-    //    if (player.overlap(ghost2[i])) {
-     //       lives = lives - 1;
-     //   }
-    //}
     textAlign(LEFT, TOP);
     textSize(15);
     //lives
@@ -169,7 +169,7 @@ function draw() {
         text("❤", 20, 20);
     }
     //dead
-    else if (lives < 0) {
+    else if (lives <= 0) {
         ghost1.changeAnimation("move");
         ghost1.velocity.x = 0;
         ghost2.changeAnimation("move");
@@ -179,9 +179,10 @@ function draw() {
         stroke(0);
         fill(255);
         background(0, 0, 0, 100);
-        text("GAME OVER", width / 2, height / 2);
+        text("GAME OVER. YOU CAN NEVER LEAVE THE UNDERWORLD.", width / 3, height / 2);
     }
 }
+
 function keyPressed() {
     //move left
     if (keyCode == LEFT_ARROW) {
